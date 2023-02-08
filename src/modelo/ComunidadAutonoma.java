@@ -50,5 +50,18 @@ public class ComunidadAutonoma implements java.io.Serializable {
 	public void setProvincias(Set provincias) {
 		this.provincias = provincias;
 	}
+	
+	public void addProvincia(Provincia prov) {
+		//Se crea el if, aunque de faltar datos, HQL avisa del error???
+		if (prov != null) {
+			getProvincias().add(prov);
+		} else {
+			System.out.println("Faltan datos por introducir");
+		}
+	}
+	
+	public void removeProvincia(Provincia prov) {
+		getProvincias().remove(prov);
+	}
 
 }
